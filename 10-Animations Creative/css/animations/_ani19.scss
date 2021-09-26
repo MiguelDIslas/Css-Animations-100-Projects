@@ -1,0 +1,84 @@
+@import "../properties";
+
+.sectionAnimation19 {
+  @include FlexCenter();
+  background-color: #0b1734;
+  height: 230px;
+}
+
+.containerColorful {
+  @include WidthHeightValues(100px);
+  position: relative;
+  animation: animate 1s linear infinite;
+  transform: rotate(45deg);
+
+  & span {
+    @include WidthHeightValues(50px);
+    position: absolute;
+    animation: rotateSquare 1s linear infinite;
+  }
+
+  & span:nth-child(1) {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    background-color: #fceba7;
+  }
+
+  & span:nth-child(2) {
+    @include TRBL($topValue: 0, $rightValue: 0);
+    background-color: #55dd89;
+  }
+
+  & span:nth-child(3) {
+    @include TRBL($bottomValue: 0, $leftValue: 0);
+    background-color: #fd6c64;
+  }
+
+  & span:nth-child(4) {
+    @include TRBL($bottomValue: 0, $rightValue: 0);
+    background-color: #1f89b0;
+  }
+}
+
+@keyframes rotateSquare {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  10% {
+    transform: rotate(0deg)
+  }
+
+  50% {
+    transform: rotate(90deg)
+  }
+
+  90% {
+    transform: rotate(90deg)
+  }
+
+  100% {
+    transform: rotate(90deg)
+  }
+}
+
+@keyframes animate {
+  0% {
+    @include WidthHeightValues(100px);
+  }
+
+  10% {
+    @include WidthHeightValues(100px);
+  }
+
+  50% {
+    @include WidthHeightValues(150px);
+  }
+
+  90% {
+    @include WidthHeightValues(100px);
+  }
+
+  100% {
+    @include WidthHeightValues(100px);
+  }
+}

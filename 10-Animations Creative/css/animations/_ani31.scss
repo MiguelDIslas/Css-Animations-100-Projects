@@ -1,0 +1,71 @@
+@import "../properties";
+
+.sectionAnimation31 {
+  @include FlexCenter();
+  background-color: #192a56;
+  height: 330px;
+}
+.background-boxes {
+  @include WidthHeightValues(100%);
+  position: relative;
+  overflow: hidden;
+
+  & h2 {
+    @include TRBL($topValue: 50%, $leftValue: 50%);
+    margin: 0;
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+}
+
+.bg-box {
+  @include WidthHeightValues(10px);
+  @include TRBL($topValue: 80%, $leftValue: 45%);
+  position: absolute;
+  border: 1px solid #003298;
+  animation: bg-box 12s ease-in infinite;
+  transform: scale(0);
+
+  &:nth-child(2) {
+    @include TRBL($topValue: 40%, $leftValue: 25%);
+    border-color: red;
+    animation-delay: 2s;
+  }
+
+  &:nth-child(3) {
+    @include TRBL($topValue: 50%, $leftValue: 75%);
+    animation-delay: 4s;
+  }
+
+  &:nth-child(4) {
+    @include TRBL($topValue: 10%, $leftValue: 90%);
+    border-color: red;
+    animation-delay: 6s;
+  }
+
+  &:nth-child(5) {
+    @include TRBL($topValue: 85%, $leftValue: 10%);
+    animation-delay: 8s;
+  }
+
+  &:nth-child(6) {
+    @include TRBL($topValue: 10%, $leftValue: 50%);
+    border-color: red;
+    animation-delay: 10s;
+  }
+}
+
+@keyframes bg-box {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(20) rotate(960deg);
+    opacity: 0;
+  }
+}

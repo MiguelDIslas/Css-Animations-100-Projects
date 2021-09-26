@@ -1,0 +1,43 @@
+@import "../properties";
+
+.button20 {
+  text-decoration: none;
+  color: $DarkColor;
+  font-size: 45px;
+  position: relative;
+  padding: 15px 15px;
+  transition: all 0.2s;
+  overflow: hidden;
+
+  & > .span5 {
+    @include WidthHeightValues(98%, 95%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid black;
+    z-index: -1;
+  }
+}
+
+.span5::before {
+  content: "";
+  position: absolute;
+  @include WidthHeightValues(8%, 500%);
+  background-color: white;
+  @include TRBL($topValue: 50%, $leftValue: 50%);
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.2s;
+}
+
+.button20:hover {
+  color: white;
+
+  & .span5::before {
+    width: 100%;
+    background-color: black;
+    transform: translate(-50%, -50%) rotate(60deg);
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,71 @@
+@import "../properties";
+
+.sectionClip6 {
+  @include FlexCenter();
+  font-family: "Poppins";
+  height: 550px;
+}
+
+.card-hover {
+  @include WidthHeightValues(335px, 500px);
+  position: relative;
+
+  &:hover .image-clip {
+    clip-path: circle(18.2% at 50% 38%);
+  }
+
+  &:hover .content-card-hover h2,
+  &:hover .content-card-hover p,
+  &:hover .content-card-hover a {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+}
+
+.image-clip {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  position: absolute;
+  transition: all 0.5s;
+  clip-path: circle(70.7% at 50% 50%);
+
+  & img {
+    @include WidthHeightValues(100%);
+  }
+}
+
+.content-card-hover {
+  @include TRBL($bottomValue: 50px, $leftValue: 0);
+  position: absolute;
+  text-align: center;
+
+  & h2 {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  & p {
+    margin-bottom: 25px;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  & a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    text-transform: capitalize;
+  }
+
+  & h2,
+  p,
+  a {
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateY(20px);
+  }
+}

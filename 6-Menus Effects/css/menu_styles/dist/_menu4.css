@@ -1,0 +1,52 @@
+.section4 {
+  font-family: "Poppins";
+}
+
+.menu4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.menu4 li {
+  list-style: none;
+  margin: 15px;
+}
+.menu4 li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 22px;
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+}
+.menu4 li a::before, .menu4 li a::after {
+  width: 0;
+  height: 5px;
+  content: "";
+  position: absolute;
+  transition: all 0.5s;
+}
+.menu4 li a::before {
+  top: 120%;
+  right: "";
+  bottom: "";
+  left: 0;
+  background-color: #00bcd4;
+}
+.menu4 li a::after {
+  top: 120%;
+  right: 0;
+  bottom: "";
+  left: "";
+  background-color: #f0f;
+}
+.menu4 li a:hover:before {
+  width: 50%;
+  transform: translateX(105%);
+}
+.menu4 li a:hover::after {
+  width: 50%;
+  transform: translateX(-105%);
+}

@@ -1,0 +1,40 @@
+@import "../properties";
+
+.card2 {
+  @include WidthHeightValues(300px, 260px);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0pc 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  padding: 20px 40px;
+
+  &:hover {
+    height: 420px;
+  }
+
+  &:hover .content2 {
+    opacity: 1;
+    transform: translateY(-220px);
+  }
+}
+
+.imgbox1 {
+  @include WidthHeightValues(100%);
+  position: relative;
+  transform: translateY(-40px);
+  z-index: 1;
+
+  & img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.content2 {
+  padding: 5px 20px;
+  text-align: center;
+  color: #111;
+  transition: 0.3s;
+  transform: translateY(-300px);
+  opacity: 0;
+}

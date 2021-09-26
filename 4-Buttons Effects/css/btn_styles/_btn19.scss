@@ -1,0 +1,41 @@
+@import "../properties";
+
+.button19 {
+  @include ButtonDecoration();
+  transition: all 0.5s;
+
+  &:hover{
+    color: white;
+  }
+
+  &:hover .wave{
+    top: 0;
+  }
+}
+
+.wave {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: calc(100% + 22px), $leftValue: 0);
+  position: absolute;
+  background-color: #00aeff;
+  transition: all 1s;
+  z-index: -1;
+
+  &::before {
+    @include WidthHeightValues(100%, 22px);
+    @include TRBL($topValue: -22px, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background: url("../../wwwroot/img/wave.png");
+    animation: wavy 0.5s linear infinite;
+  }
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 118px;
+  }
+}

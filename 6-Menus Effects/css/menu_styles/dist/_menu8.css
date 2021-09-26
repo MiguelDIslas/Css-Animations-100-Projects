@@ -1,0 +1,107 @@
+.section8 {
+  font-family: "Poppins";
+  background-color: #333;
+}
+
+.menu8 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.menu8 li {
+  list-style: none;
+  margin: 15px;
+}
+.menu8 li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 22px;
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+}
+.menu8 li a {
+  color: white;
+}
+.menu8 li a:hover {
+  color: #ff0;
+}
+.menu8 li a span:first-child::before, .menu8 li a span:first-child::after {
+  width: 8px;
+  height: 8px;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  transition: 0.2s;
+  opacity: 0;
+}
+.menu8 li a span:first-child::before {
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  border-top: 2px solid #ff0;
+  border-left: 2px solid #ff0;
+}
+.menu8 li a span:first-child::after {
+  top: 0;
+  right: 0;
+  bottom: "";
+  left: "";
+  border-top: 2px solid #ff0;
+  border-right: 2px solid #ff0;
+}
+.menu8 li a span:last-child::before, .menu8 li a span:last-child::after {
+  width: 8px;
+  height: 8px;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  transition: 0.2s;
+  opacity: 0;
+}
+.menu8 li a span:last-child::before {
+  top: "";
+  right: "";
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #ff0;
+  border-left: 2px solid #ff0;
+}
+.menu8 li a span:last-child::after {
+  top: "";
+  right: 0;
+  bottom: 0;
+  left: "";
+  border-bottom: 2px solid #ff0;
+  border-right: 2px solid #ff0;
+}
+.menu8 li a:hover span:first-child::before, .menu8 li a:hover span:first-child::after, .menu8 li a:hover span:last-child::before, .menu8 li a:hover span:last-child::after {
+  opacity: 1;
+}
+.menu8 li a:hover span:first-child::before {
+  top: -10px;
+  right: "";
+  bottom: "";
+  left: -10px;
+}
+.menu8 li a:hover span:first-child::after {
+  top: -10px;
+  right: -10px;
+  bottom: "";
+  left: "";
+}
+.menu8 li a:hover span:last-child::before {
+  top: "";
+  right: "";
+  bottom: -10px;
+  left: -10px;
+}
+.menu8 li a:hover span:last-child::after {
+  top: "";
+  right: -10px;
+  bottom: -10px;
+  left: "";
+}

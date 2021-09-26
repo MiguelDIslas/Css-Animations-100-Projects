@@ -1,0 +1,71 @@
+@import "../properties";
+
+.image-container9 {
+  @include WidthHeightValues(100%);
+  background-color: #444;
+  border: 10px solid black;
+  position: relative;
+  overflow: hidden;
+
+  & > img {
+    @include WidthHeightValues(100%);
+    transition: all 0.5s;
+  }
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: #006266;
+    transition: all 0.5s;
+    transform: scale(0) rotate(-180deg);
+  }
+
+  &:hover::before {
+    transform: scale(1) rotate(0deg);
+    transition-delay: 0.5s;
+  }
+}
+
+.caption9 {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  @include FlexColumn();
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+
+  & h1 {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  & p {
+    width: 70%;
+  }
+
+  & a {
+    @include ReadMoreStyle();
+  }
+
+  & h1,
+  & p,
+  & a {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+}
+.image-container9:hover {
+  & h1,
+  & a,
+  & p {
+    opacity: 1;
+    transition-delay: 0.6s;
+  }
+
+  & img {
+    transform: scale(0);
+  }
+
+}

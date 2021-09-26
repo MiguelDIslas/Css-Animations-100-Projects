@@ -1,0 +1,62 @@
+.section7 {
+  font-family: "Poppins";
+}
+
+.menu7 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.menu7 li {
+  list-style: none;
+  margin: 15px;
+}
+.menu7 li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 22px;
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+}
+.menu7 li a::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transform: scaleY(2);
+  transition: 0.5s;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.menu7 li a:hover::before {
+  transform: scaleY(1.2);
+  opacity: 1;
+}
+.menu7 li a::after {
+  width: 100%;
+  height: 100%;
+  top: 2px;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #222;
+  transition: 0.5s;
+  transform: scale(0);
+  z-index: -1;
+}
+.menu7 li a:hover::after {
+  transform: scale(1);
+}
+.menu7 li a:hover {
+  color: white;
+}

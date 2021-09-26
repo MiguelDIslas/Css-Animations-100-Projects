@@ -1,0 +1,87 @@
+@import "../properties";
+$YellowColor: #ff0;
+
+.section8 {
+  font-family: "Poppins";
+  background-color: #333;
+}
+
+.menu8 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a {
+    color: white;
+  }
+
+  & li a:hover {
+    color: $YellowColor;
+  }
+
+  & li a span:first-child::before,
+  & li a span:first-child::after {
+    @include WidthHeightValues(8px);
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    transition: 0.2s;
+    opacity: 0;
+  }
+
+  & li a span:first-child::before {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    border-top: 2px solid $YellowColor;
+    border-left: 2px solid $YellowColor;
+  }
+
+  & li a span:first-child::after {
+    @include TRBL($topValue: 0, $rightValue: 0);
+    border-top: 2px solid $YellowColor;
+    border-right: 2px solid $YellowColor;
+  }
+
+  & li a span:last-child::before,
+  & li a span:last-child::after {
+    @include WidthHeightValues(8px);
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    transition: 0.2s;
+    opacity: 0;
+  }
+
+  & li a span:last-child::before {
+    @include TRBL($bottomValue: 0, $leftValue: 0);
+    border-bottom: 2px solid $YellowColor;
+    border-left: 2px solid $YellowColor;
+  }
+
+  & li a span:last-child::after {
+    @include TRBL($bottomValue: 0, $rightValue: 0);
+    border-bottom: 2px solid $YellowColor;
+    border-right: 2px solid $YellowColor;
+  }
+
+  & li a:hover span:first-child::before,
+  & li a:hover span:first-child::after,
+  & li a:hover span:last-child::before,
+  & li a:hover span:last-child::after {
+    opacity: 1;
+  }
+
+  & li a:hover span:first-child::before {
+    @include TRBL($topValue: -10px, $leftValue: -10px);
+  }
+
+  & li a:hover span:first-child::after {
+    @include TRBL($topValue: -10px, $rightValue: -10px);
+  }
+
+  & li a:hover span:last-child::before {
+    @include TRBL($bottomValue: -10px, $leftValue: -10px);
+  }
+
+  & li a:hover span:last-child::after {
+    @include TRBL($bottomValue: -10px, $rightValue: -10px);
+  }
+}

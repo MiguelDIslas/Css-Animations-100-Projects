@@ -1,0 +1,22 @@
+@import '../properties';
+
+.button1 {
+  @include ButtonDecoration();
+  transition: all 0.5s;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: '';
+    position: absolute;
+    background-color:skyblue;
+    z-index: -1;
+    transform-origin: bottom right;
+    transform: rotate(90deg);
+    transition: transform 1s;
+  }
+
+  &:hover::before {
+    transform: rotate(0deg);
+  }
+}

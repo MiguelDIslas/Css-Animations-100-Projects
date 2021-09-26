@@ -1,0 +1,32 @@
+@import "../properties";
+
+.sectionAnimation23 {
+  @include FlexCenter();
+  height: 230px;
+  background-color: #262626;
+}
+
+.line-loading {
+  @include WidthHeightValues(300px, 3px);
+  background-color: white;
+  animation: line 2s infinite alternate;
+}
+
+@keyframes line {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  45% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;      
+  }
+}

@@ -1,0 +1,52 @@
+@import "../properties";
+
+.button13 {
+  @include WidthHeightValues(250px, 60px);
+  text-decoration: none;
+  background-color: transparent;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.2s;
+  color: white;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: -3px, $leftValue: -3px);
+    content: "";
+    position: absolute;
+    background-color: #20caff;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.2s;
+    transform-origin: top;
+  }
+
+  &::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 3px, $leftValue: 3px);
+    content: "";
+    position: absolute;
+    background-color: #ff7675;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.2s;
+    transform-origin: bottom;
+  }
+
+  &:hover::before {
+    @include TRBL($topValue: -6px, $leftValue: 0);
+    transform: perspective(1000px) rotateX(75deg);
+  }
+
+  &:hover::after {
+    @include TRBL($topValue: 6px, $leftValue: 0);
+    transform: perspective(1000px) rotateX(-75deg);
+  }
+
+  &:hover{
+    color: $DarkColor;
+  }
+}

@@ -1,0 +1,101 @@
+@import "../properties";
+
+.sectionAnimation28 {
+  @include FlexCenter();
+  background-color: #333;
+  height: 250px;
+}
+
+.container-boxes {
+  @include WidthHeightValues(100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.text-box {
+  @include TRBL($topValue: 50%, $leftValue: 50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 45px;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+
+.square-box {
+  position: absolute;
+  bottom: -100px;
+  background-color: #f2f2f2;
+  animation: boxes 10s infinite ease-in-out;
+
+  &:nth-child(1) {
+    @include WidthHeightValues(75px);
+    left: 7%;
+  }
+
+  &:nth-child(2) {
+    @include WidthHeightValues(65px);
+    left: 15%;
+    animation-delay: 4s;
+  }
+
+  &:nth-child(3) {
+    @include WidthHeightValues(82px);
+    left: 45%;
+    animation-delay: 8s;
+  }
+
+  &:nth-child(4) {
+    @include WidthHeightValues(70px);
+    left: 55%;
+    animation-delay: 2s;
+  }
+
+  &:nth-child(5) {
+    @include WidthHeightValues(60px);
+    left: 27%;
+    animation-delay: 6s;
+  }
+
+  &:nth-child(6) {
+    @include WidthHeightValues(55px);
+    left: 60%;
+    animation-delay: 4s;
+  }
+
+  &:nth-child(7) {
+    @include WidthHeightValues(90px);
+    left: 85%;
+    animation-delay: 9s;
+  }
+
+  &:nth-child(8) {
+    @include WidthHeightValues(70px);
+    left: 75%;
+    animation-delay: 4s;
+  }
+
+  &:nth-child(9) {
+    @include WidthHeightValues(45px);
+    left: 10%;
+    animation-delay: 7s;
+  }
+
+  &:nth-child(10) {
+    @include WidthHeightValues(55px);
+    left: 65%;
+    animation-delay: 7s;
+  }
+}
+
+@keyframes boxes {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 100%;
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+}

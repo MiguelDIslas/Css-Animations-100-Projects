@@ -1,0 +1,71 @@
+@import "../properties";
+
+.sectionAnimation18 {
+  @include FlexCenter();
+  background-color: #2c3e50;
+  height: 330px;
+}
+
+.cradle {
+  display: flex;
+  border-top: 10px solid white;
+
+  & span {
+    @include WidthHeightValues(3px, 300px);
+    display: block;
+    background-color: white;
+    margin: 0 29px;
+    position: relative;
+    transform-origin: top;
+  }
+
+  & span::before {
+    @include WidthHeightValues(60px);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateX(-50%);
+  }
+
+  & span:first-child {
+    animation: left-arm 2s ease-in infinite;
+  }
+
+  & span:last-child {
+    animation: right-arm 2s ease-in infinite;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes left-arm {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(60deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes right-arm {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

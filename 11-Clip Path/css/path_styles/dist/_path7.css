@@ -1,0 +1,64 @@
+.sectionClip7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 450px;
+}
+
+.card-hover-two {
+  width: 430px;
+  height: 430px;
+  position: relative;
+  background-color: black;
+}
+.card-hover-two img {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.card-hover-two img:hover {
+  clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.content-card-two {
+  top: 50%;
+  right: "";
+  bottom: "";
+  left: 50%;
+  width: 60%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+.content-card-two h2,
+.content-card-two p,
+.content-card-two a {
+  text-transform: capitalize;
+}
+.content-card-two h2 {
+  margin-bottom: 20px;
+}
+.content-card-two p {
+  margin-bottom: 30px;
+}
+.content-card-two a {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+.content-card-two a:hover {
+  color: black;
+  background-color: white;
+}

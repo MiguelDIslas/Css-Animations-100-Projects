@@ -1,0 +1,23 @@
+@import "../properties";
+
+.button8 {
+  @include ButtonDecoration();
+  transition: all 0.5s;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    @include FlexCenter();
+    content: "Hover Me";
+    position: absolute;
+    background-color: $DarkColor;
+    color: white;
+    transform: scale(5);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  &:hover::before {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

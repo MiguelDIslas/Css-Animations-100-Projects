@@ -1,0 +1,70 @@
+@import "../properties";
+
+.image-container7 {
+  @include WidthHeightValues(100%);
+  position: relative;
+  overflow: hidden;
+
+  & > img {
+    @include WidthHeightValues(100%);
+  }
+
+  &::before {
+    @include WidthHeightValues(200%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: #2d3436;
+    opacity: 0.8;
+    transition: all 0.25s;
+    transform: translate(500px, 300px) rotate(45deg);
+  }
+
+  &:hover::before {
+    transform: translate(-250px, -200px) rotate(45deg);
+    transition-delay: 0s;
+  }
+}
+
+.caption7 {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  @include FlexColumn();
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+
+  & h1 {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translate(250px, -250px);
+    transition: all 0.25s;
+  }
+
+  & p {
+    width: 70%;
+    transform: translate(-250px, calc(100% + 300px));
+    transition: all 0.25s;
+  }
+
+  & a{
+    @include ReadMoreStyle();
+    transition: all 0.25s;
+    transform: translateY(calc(100% + 250px));
+  }
+}
+.image-container7:hover {
+  & h1,
+  & p {
+    transform: translate(0, 0);
+  }
+
+ & a {
+    transform: translateY(0);
+  }  
+
+  & .caption7 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

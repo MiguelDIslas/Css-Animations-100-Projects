@@ -1,0 +1,36 @@
+@import "../properties";
+
+.section1 {
+  font-family: "Poppins";
+  background-color: #fffa65;
+}
+
+.menu1 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a::before,
+  & li a::after {
+    @include WidthHeightValues(100%, 2px);
+    content: "";
+    position: absolute;
+    background-color: #3d3d3d;
+    transform: scaleX(0);
+    transition: all 0.5s;
+  }
+
+  & li a::before {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    transform-origin: left;
+  }
+
+  & li a::after {
+    @include TRBL($bottomValue: 0, $leftValue: 0);
+    transform-origin: right;
+  }
+
+  & li a:hover:before,
+  & li a:hover:after {
+    transform: scaleX(1);
+  }
+}

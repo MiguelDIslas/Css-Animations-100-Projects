@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+.element {
+  width: calc(100% / 3);
+}
+
+/*Image 1*/
+.image1 {
+  width: 300px;
+  display: block;
+  margin: auto;
+  transition: transform 2s;
+}
+.image1:hover {
+  transform: translate(500px, 200px);
+}
+
+/*Image 2*/
+.image2 {
+  width: 300px;
+  display: block;
+  margin: auto;
+  transition: transform 2s;
+}
+.image2:hover {
+  transform: scale(2);
+}
+
+/*Image 3*/
+.image3 {
+  width: 300px;
+  display: block;
+  margin: auto;
+  transition: transform 2s;
+}
+.image3:hover {
+  transform: rotate(90deg);
+}
+
+/*Image 4*/
+.image4 {
+  width: 300px;
+  display: block;
+  margin: auto;
+  transition: transform 2s;
+}
+.image4:hover {
+  transform: skew(20deg);
+}
+
+/*Image 5*/
+.image5 {
+  width: 300px;
+  display: block;
+  margin: auto;
+  transition: transform 2s;
+  transform-origin: 0 0;
+}
+.image5:hover {
+  transform: rotate(40deg);
+}
+
+.home-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #282828;
+  color: white;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}

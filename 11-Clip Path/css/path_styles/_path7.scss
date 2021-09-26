@@ -1,0 +1,63 @@
+@import "../properties";
+
+.sectionClip7 {
+  @include FlexCenter();
+  font-family: "Poppins";
+  height: 450px;
+}
+
+.card-hover-two {
+  @include WidthHeightValues(430px);
+  position: relative;
+  background-color: black;
+
+  & img {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    position: absolute;
+    object-fit: cover;
+    transition: 0.5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  & img:hover {
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.content-card-two {
+  @include TRBL($topValue: 50%, $leftValue: 50%);
+  width: 60%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+
+  h2,
+  p,
+  a {
+    text-transform: capitalize;
+  }
+
+  & h2 {
+    margin-bottom: 20px;
+  }
+
+  & p {
+    margin-bottom: 30px;
+  }
+
+  & a {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+  }
+
+  & a:hover {
+    color: black;
+    background-color: white;
+  }
+}

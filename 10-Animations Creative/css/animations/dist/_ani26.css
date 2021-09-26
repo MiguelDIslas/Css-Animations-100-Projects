@@ -1,0 +1,55 @@
+.sectionAnimation26 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a3d62;
+  height: 230px;
+}
+
+.outloader {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.outloader span {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.outloader span::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: white;
+  animation: out-loading 1s linear infinite;
+}
+
+@keyframes out-loading {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+.s4::before,
+.s5::before,
+.s6::before {
+  animation-delay: 0.1s;
+}
+
+.s7::before,
+.s8::before,
+.s9::before {
+  animation-delay: 0.2s;
+}

@@ -1,0 +1,44 @@
+@import '../properties';
+
+.button21 {
+  text-decoration: none;
+  color: white;
+  font-size: 45px;
+  position: relative;
+  padding: 15px 15px;
+  font-weight: bold;
+  background-color: transparent;
+
+  &::before{
+    @include WidthHeightValues(50%, 100%);
+    @include TRBL($topValue: -5px, $leftValue: -1%);
+    content: '';
+    position: absolute;
+    background-color: #ee5253;
+    z-index: -1;
+    transform: skewX(30deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &:hover::before{
+    @include TRBL($topValue: 0, $leftValue: 50%);
+    transform: skewX(0deg);
+  }
+
+  &::after{
+    @include WidthHeightValues(50%, 100%);
+    @include TRBL($topValue: 5px, $leftValue: 51%);
+    content: '';
+    position: absolute;
+    background-color: #0a3d62;
+    z-index: -1;
+    transform: skewX(30deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &:hover::after{
+    @include TRBL($topValue: 0, $leftValue: 0);
+    transform: skewX(0deg);
+  }
+
+}

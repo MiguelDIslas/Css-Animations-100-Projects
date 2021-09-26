@@ -1,0 +1,50 @@
+@import "../properties";
+
+.button23 {
+  @include WidthHeightValues(250px, 80px);
+  text-decoration: none;
+  color: #250e74;
+  font-size: 45px;
+  position: relative;
+  text-align: center;
+  padding: 15px 15px;
+  border: 4px solid #250e74;
+  transition: all 0.5s;
+  overflow: hidden;
+
+  &:hover {
+    color: white;
+  }
+
+  &::before {
+    @include TRBL($topValue: 0, $leftValue: 0, $bottomValue: 0, $rightValue: 0);
+    content: "";
+    position: absolute;
+    border-top: 60px solid #250e74;
+    border-bottom: 60px solid #250e74;
+    border-right: 60px solid transparent;
+    transition: all 0.5s;
+    z-index: -1;
+    transform: translateX(-100%);
+  }
+
+  &:hover::before {
+    transform: translateX(0);
+  }
+
+  &::after {
+    @include TRBL($topValue: 0, $leftValue: 0, $bottomValue: 0, $rightValue: 0);
+    content: "";
+    position: absolute;
+    border-top: 60px solid #250e74;
+    border-bottom: 60px solid #250e74;
+    border-left: 60px solid transparent;
+    transition: all 0.5s;
+    z-index: -1;
+    transform: translateX(100%);
+  }
+
+  &:hover::after {
+    transform: translateX(0);
+  }  
+}

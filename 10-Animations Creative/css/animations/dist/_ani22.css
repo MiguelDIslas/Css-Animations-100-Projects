@@ -1,0 +1,44 @@
+.sectionAnimation22 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 230px;
+}
+
+.ring-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  border-left: 4px solid #262626;
+  border-radius: 50%;
+  animation: ring 1s linear infinite;
+}
+
+.text-ring {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  text-align: center;
+  line-height: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

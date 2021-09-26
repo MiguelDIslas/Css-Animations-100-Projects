@@ -1,0 +1,46 @@
+@import "../properties";
+
+.section7 {
+  font-family: "Poppins";
+}
+
+.menu7 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transform: scaleY(2);
+    transition: 0.5s;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  & li a:hover::before {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+
+  & li a::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 2px, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: #222;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: -1;
+  }
+
+  & li a:hover::after {
+    transform: scale(1);
+  }
+
+  & li a:hover {
+    color: white;
+  }
+}

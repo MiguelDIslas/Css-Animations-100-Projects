@@ -1,0 +1,44 @@
+@import "../properties";
+
+.button17 {
+  @include ButtonDecoration();
+  transition: all 0.2s;
+
+  &:hover{
+      color: white;
+  }  
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: black;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  &:hover::before{
+      opacity: 1;
+  }
+
+  & .span3{
+      color: transparent;
+      position: relative;
+  }
+
+  & .span3::before{
+      content: "H";
+      position: absolute;
+      color: black;
+      transition: all 0.2s;
+  }
+
+  &:hover .span3::before{
+
+      color: white;
+      font-size: 75px;
+      transform: translate(-35%, -20%) rotate(360deg);
+  }
+}

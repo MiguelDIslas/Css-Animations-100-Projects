@@ -1,0 +1,34 @@
+.sectionAnimation16 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272727;
+}
+
+.slider {
+  width: 800px;
+  height: 400px;
+  background: url("../../wwwroot/img/image10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: change-bg 10s linear infinite;
+}
+
+@keyframes change-bg {
+  0% {
+    background: url("../../wwwroot/img/image1.jpg");
+  }
+  25% {
+    background: url("../../wwwroot/img/image3.jpg");
+  }
+  50% {
+    background: url("../../wwwroot/img/image.jpg");
+  }
+  75% {
+    background: url("../../wwwroot/img/image4.jpg");
+  }
+  100% {
+    background: url("../../wwwroot/img/image5.jpg");
+  }
+}

@@ -1,0 +1,16 @@
+@import "../properties";
+
+.image-container6 {
+  @include WidthHeightValues(100%);
+  position: relative;
+  overflow: hidden;
+
+  & > img {
+    @include WidthHeightValues(100%);
+    transition: all 1s;
+  }
+}
+
+.image1:hover {
+  transform: scale(1.2) rotate(9deg);
+}

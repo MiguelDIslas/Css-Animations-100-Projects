@@ -1,0 +1,66 @@
+@import "../properties";
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+.section6 {
+  font-family: "Raleway", "Poppins", sans-serif;
+  background-color: #333;
+}
+
+.menu6 {
+  @include FlexColumn();
+
+  & li {
+    position: relative;
+    list-style: none;
+    margin: 5px;
+  }
+
+  & li a {
+    position: relative;
+    display: block;
+    height: 40px;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    overflow: hidden;
+  }
+
+  & li a span {
+    @include WidthHeightValues(100%);
+    @include FlexCenter();
+    position: relative;
+    transition: 0.5s;
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    transition-delay: 0.5s;
+  }
+
+  & li a:hover span:nth-child(1) {
+    transform: translateY(-100%);
+    transition-delay: 0s;
+  }
+
+  & li a:hover span:nth-child(2) {
+    transform: translateY(-100%);
+    transition-delay: 0s;
+  }
+
+  & li a::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: #16a085;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s;
+  }
+
+  & li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition-delay: 0.5s;
+  }
+}

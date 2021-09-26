@@ -1,0 +1,45 @@
+@import "../properties";
+$YellowColor: #ffeb3b;
+
+.section9 {
+  font-family: "Poppins";
+  background-color: rgb(27, 27, 27);
+}
+
+.menu9 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a {
+    color: $YellowColor;
+  }
+
+  & li a::before,
+  & li a::after {
+    @include WidthHeightValues(100%);
+    content: "";
+    position: absolute;
+    transition: 0.5s;
+    box-sizing: border-box;
+  }
+
+  & li a::before {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    border-top: 2px solid $YellowColor;
+    border-left: 2px solid $YellowColor;
+    transform-origin: left;
+  }
+
+  & li a::after {
+    @include TRBL($bottomValue: 0, $rightValue: 0);
+    border-bottom: 2px solid $YellowColor;
+    border-right: 2px solid $YellowColor;
+    transform-origin: right;
+  }
+
+  & li a:hover::before,
+  & li a:hover::after {
+    @include WidthHeightValues(15px);
+    transform: rotate(360deg);
+  }
+}

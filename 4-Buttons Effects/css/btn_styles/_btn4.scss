@@ -1,0 +1,13 @@
+@import '../properties';
+
+.button4 {
+  @include ButtonDecoration();
+  font-weight: 300;
+  transition: all 0.5s;
+
+  &:hover {
+    font-weight: 900;
+    letter-spacing: 10px;
+    border: 7px solid $DarkColor;
+  }
+}

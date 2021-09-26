@@ -1,0 +1,38 @@
+@import "../properties";
+
+.section4 {
+  font-family: "Poppins";
+}
+
+.menu4 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a::before,
+  & li a::after {
+    @include WidthHeightValues(0, 5px);
+    content: "";
+    position: absolute;
+    transition: all 0.5s;
+  }
+
+  & li a::before {
+    @include TRBL($topValue: 120%, $leftValue: 0);
+    background-color: #00bcd4;
+  }
+
+  & li a::after {
+    @include TRBL($topValue: 120%, $rightValue: 0);
+    background-color: #f0f;
+  }
+
+  & li a:hover:before {
+    width: 50%;
+    transform: translateX(105%);
+  }
+
+  & li a:hover::after {
+    width: 50%;
+    transform: translateX(-105%);
+  }
+}

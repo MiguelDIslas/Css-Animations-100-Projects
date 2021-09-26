@@ -1,0 +1,84 @@
+@mixin ImgP {
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+.element {
+  width: calc(100% / 3);
+}
+
+/*Image 1*/
+.image1 {
+  @include ImgP();
+  transition: transform 2s;
+
+  &:hover {
+    transform: translate(500px, 200px);
+  }
+}
+
+/*Image 2*/
+.image2 {
+  @include ImgP();
+  transition: transform 2s;
+
+  &:hover {
+    transform: scale(2);
+  }
+}
+
+/*Image 3*/
+.image3 {
+  @include ImgP();
+  transition: transform 2s;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+/*Image 4*/
+.image4 {
+  @include ImgP();
+  transition: transform 2s;
+
+  &:hover {
+    transform: skew(20deg);
+  }
+}
+
+/*Image 5*/
+.image5 {
+  @include ImgP();
+  transition: transform 2s;
+  transform-origin: 0 0;
+
+  &:hover {
+    transform: rotate(40deg);
+  }
+}
+
+.home-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #282828;
+  color: white;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}

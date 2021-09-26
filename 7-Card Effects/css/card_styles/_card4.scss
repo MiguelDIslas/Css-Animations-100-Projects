@@ -1,0 +1,73 @@
+@import "../properties";
+
+.card4 {
+  @include WidthHeightValues(300px, 400px);
+  position: relative;
+  background: white;
+  transition: 0.5s;
+  border: 1px solid black;
+
+  &:hover {
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.face {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  @include FlexCenter();
+  position: absolute;
+}
+
+.face1 {
+  @include FlexCenter();
+  text-align: center;
+  background-color: white;
+  color: #013d4a;
+
+  & h2 {
+    margin-top: 80px;
+  }
+
+  & a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #013d4a;
+    border: 2px solid #013d4a;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  & a:hover {
+    background-color: #013d4a;
+    color: white;
+  }
+}
+
+.face2 {
+  background-color: #013d4a;
+  transition: 0.5s;
+
+  & h2 {
+    font-size: 120px;
+    color: white;
+    transition: 0.5s;
+  }
+}
+
+.card4:hover .face2 {
+  @include WidthHeightValues(80px);
+  @include TRBL($topValue: 40px, $leftValue: 50%);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: 2px solid #013d4a;
+}
+
+.card4:hover .face2 h2 {
+  color: #013d4a;
+  font-size: 32px;
+}

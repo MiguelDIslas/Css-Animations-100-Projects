@@ -1,0 +1,15 @@
+.image-container6 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container6 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.image1:hover {
+  transform: scale(1.2) rotate(9deg);
+}

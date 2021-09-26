@@ -1,0 +1,10 @@
+.sectionClip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionClip img {
+  width: 300px;
+  height: 300px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}

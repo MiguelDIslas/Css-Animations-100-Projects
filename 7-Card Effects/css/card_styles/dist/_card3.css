@@ -1,0 +1,51 @@
+.card3 {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, #d41e31, #491f8f);
+  border-radius: 20px;
+}
+.card3 img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+  transition: 0.5s;
+}
+.card3:hover img {
+  height: 450px;
+  left: 80%;
+}
+.card3:hover .content3 {
+  left: 5%;
+  opacity: 1;
+}
+
+.content3 {
+  position: relative;
+  width: 40%;
+  left: 20%;
+  color: white;
+  text-transform: capitalize;
+  transition: 0.5s;
+  opacity: 0;
+}
+.content3 h2 {
+  margin: 0;
+  padding: 0;
+}
+.content3 p {
+  margin-bottom: 20px;
+}
+.content3 a {
+  position: relative;
+  display: inline-block;
+  color: #111;
+  padding: 5px 10px;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}

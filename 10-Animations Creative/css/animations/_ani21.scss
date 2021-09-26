@@ -1,0 +1,42 @@
+@import "../properties";
+
+.sectionAnimation21 {
+  @include FlexCenter();
+  background-color: #2c3a47;
+  height: 230px;
+  width: auto;
+
+  & h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  & h1::before {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "LOADING...";
+    position: absolute;
+    width: 100%;
+    color: #f6b93b;
+    overflow: hidden;
+    border-right: 4px solid #f6b93b;
+    animation: text-reveal 5s linear infinite;
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}

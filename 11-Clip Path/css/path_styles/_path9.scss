@@ -1,0 +1,41 @@
+@import "../properties";
+
+.sectionClip9 {
+  @include FlexCenter();
+  font-family: "Poppins";
+  height: 200px;
+  background: #222;
+
+  & a {
+    @include WidthHeightValues(180px, 60px);
+    position: relative;
+  }
+
+  & a span {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    position: absolute;
+    color: white;
+    background-color: #4834d4;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 22px;
+  }
+
+  & span:nth-child(2) {
+    background-color: white;
+    color: #4834d4;
+    transition: 0.5s;
+    clip-path: polygon(61% 0, 100% 0%, 100% 100%, 60% 100%, 40% 52%);
+  }
+
+  & span:nth-child(2):hover {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 53%);
+  }
+
+  & span:nth-child(1):hover ~ span {
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%, 100% 50%);
+  }
+}

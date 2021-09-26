@@ -1,0 +1,100 @@
+@import '../properties';
+
+.boxText{
+    @include WidthHeightValues(200px);
+    position: relative;
+    box-sizing: border-box;
+
+    & h1{
+        @include TRBL($topValue:50%, $leftValue:50%);
+        margin: 0;
+        padding: 0;
+        color: #272727;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    & .spanTitle{
+        color: #58c747;
+        font-size: 30px;
+    }
+
+    &::before{
+        @include WidthHeightValues(100%);
+        @include TRBL($topValue:0, $leftValue:0);
+        content: "";
+        position: absolute;
+        border-top: 4px solid #58c747;
+        border-bottom: 4px solid #58c747;
+        box-sizing: border-box;
+        transition: 0.5s;
+        transform: scaleX(0);
+    }
+
+    &:hover::before{
+        transform: scaleX(1);
+    }
+
+    &::after{
+        @include WidthHeightValues(100%);
+        @include TRBL($topValue:0, $leftValue:0);
+        content: "";
+        position: absolute;
+        border-right: 4px solid #58c747;
+        border-left: 4px solid #58c747;
+        box-sizing: border-box;
+        transition: 0.5s;
+        transform: scaleY(0);
+    }
+
+    &:hover::after{
+        transform: scaleY(1);
+        transition-delay: 0.5s;
+    }
+
+}
+
+.rotated{
+    @include WidthHeightValues(100%);
+    position: absolute;
+    display: block;
+    transform: rotate(45deg);
+    box-sizing: border-box;
+
+    &::before{
+        @include WidthHeightValues(100%);
+        @include TRBL($topValue:0, $leftValue:0);
+        content: "";
+        position: absolute;
+        border-top: 4px solid #58c747;
+        border-bottom: 4px solid #58c747;
+        box-sizing: border-box;
+        transition: 0.5s;
+        transform: scaleX(0);
+    }
+
+    .boxText:hover &::before{
+        transform: scaleX(1);
+        transition-delay: 1s;
+    }
+
+    &::after{
+        @include WidthHeightValues(100%);
+        @include TRBL($topValue:0, $leftValue:0);
+        content: "";
+        position: absolute;
+        border-right: 4px solid #58c747;
+        border-left: 4px solid #58c747;
+        box-sizing: border-box;
+        transition: 0.5s;
+        transform: scaleY(0);
+    }
+
+    .boxText:hover &::after{
+        transform: scaleY(1);
+        transition-delay: 1.5s;
+    }
+}

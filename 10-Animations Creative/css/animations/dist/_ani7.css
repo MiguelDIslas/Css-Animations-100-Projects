@@ -1,0 +1,47 @@
+.sectionAnimation7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.buttonA7 {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid black;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+  z-index: inherit;
+}
+.buttonA7::before {
+  width: 120px;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  background-color: #f44336;
+  position: absolute;
+  z-index: -1;
+  transform: skew(-15deg);
+  animation: moving-button 1.2s linear infinite;
+  transition: all 0.5s;
+}
+.buttonA7:hover::before {
+  width: 100%;
+  transform: skew(0deg);
+  animation: none;
+}
+
+@keyframes moving-button {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 100%;
+  }
+}

@@ -1,0 +1,74 @@
+.sectionAnimation25 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222d3e;
+  height: 300px;
+}
+
+.ring-loader {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.outer {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-left: 5px solid #eb4d4b;
+  border-right: 5px solid #eb4d4b;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  border-radius: 50%;
+  animation: ring-rotation-loading 1s linear infinite;
+}
+
+.middle {
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  border-left: 5px solid #218c74;
+  border-right: 5px solid #218c74;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  border-radius: 50%;
+  animation: ring-rotation-loading 1s linear infinite reverse;
+}
+
+.inner {
+  top: 60px;
+  right: 60px;
+  bottom: 60px;
+  left: 60px;
+  border-left: 5px solid #ccae62;
+  border-right: 5px solid #ccae62;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  border-radius: 50%;
+  animation: ring-rotation-loading 1s linear infinite;
+}
+
+.dot {
+  top: 90px;
+  right: 90px;
+  bottom: 90px;
+  left: 90px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+
+@keyframes ring-rotation-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

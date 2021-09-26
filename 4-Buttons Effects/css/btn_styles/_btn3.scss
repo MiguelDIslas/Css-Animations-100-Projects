@@ -1,0 +1,40 @@
+@import '../properties';
+
+.button3 {
+  @include ButtonDecoration();
+  transition: all 1s;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: $DarkColor;
+    z-index: -1;
+    transition: transform 1s;
+    transform: rotateX(90deg);
+  }
+
+  &:hover {
+    color: white;
+  }
+  
+  &:hover::before {
+    transform: rotateX(0deg);
+  }
+
+  &::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: '';
+    position: absolute;
+    background-color: #282828;
+    z-index: -1;
+    transition: transform 1s;
+    transform: rotateY(90deg);
+  }  
+
+  &:hover::after {
+    transform: rotateX(0deg);
+  }  
+}

@@ -1,0 +1,9 @@
+@import '../properties';
+
+.sectionClip{
+    @include FlexCenter();
+    & img{
+        @include WidthHeightValues(300px);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+}

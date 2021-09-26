@@ -1,0 +1,23 @@
+.sectionAnimation5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../wwwroot/img/bgmulti.png");
+  background-position: 0 0;
+  animation: animated-pattern 15s linear infinite;
+}
+
+@keyframes animated-pattern {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 600px;
+  }
+}

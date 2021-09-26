@@ -1,0 +1,62 @@
+/* Css Transition */
+button{
+    height: 90px;
+    width: 290px;
+    font-size: 28px;
+    color: black;
+    border: none;
+    background-color: cyan;
+    transition: all 2s ease-in-out;
+}
+
+button:hover{
+    background-color: chocolate;
+    color: white;
+    width: 500px;
+}
+
+/* Transition options*/
+.container { width: 960px; }
+
+.move{
+    margin: 2em;
+    width: 150px;
+    height: 50px;
+    background-color: cornflowerblue;
+    color: #ffffff;
+    line-height: 50px;
+    text-align: center;
+    border-radius: .5em;
+    font-size: 20px;
+    transition-property: translate();
+    transition-duration: 3s;
+}
+
+#ease{ transition-timing-function: ease; }
+
+#linear{ transition-timing-function: linear; }
+
+#ease-in{ transition-timing-function: ease-in; }
+
+#ease-out{ transition-timing-function: ease-out; }
+
+#ease-in-out{ transition-timing-function: ease-in-out; }
+
+.move:hover{
+    transform: translate(900px, 0);
+}
+
+/*Home button*/
+.home-button{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: #282828;
+    color: white;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+}

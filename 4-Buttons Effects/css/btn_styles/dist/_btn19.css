@@ -1,0 +1,50 @@
+.button19 {
+  text-decoration: none;
+  color: #282828;
+  font-size: 45px;
+  border: 3px solid #282828;
+  position: relative;
+  padding: 15px 15px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.button19:hover {
+  color: white;
+}
+.button19:hover .wave {
+  top: 0;
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+  top: calc(100% + 22px);
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  background-color: #00aeff;
+  transition: all 1s;
+  z-index: -1;
+}
+.wave::before {
+  width: 100%;
+  height: 22px;
+  top: -22px;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background: url("../../wwwroot/img/wave.png");
+  animation: wavy 0.5s linear infinite;
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 118px;
+  }
+}

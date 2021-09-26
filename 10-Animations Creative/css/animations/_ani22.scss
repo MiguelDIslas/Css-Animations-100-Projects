@@ -1,0 +1,38 @@
+@import "../properties";
+
+.sectionAnimation22 {
+  @include FlexCenter();
+  height: 230px;
+}
+
+.ring-container {
+  @include WidthHeightValues(200px);
+  position: relative;
+}
+
+.ring {
+  @include WidthHeightValues(100%);
+  border-left: 4px solid #262626;
+  border-radius: 50%;
+  animation: ring 1s linear infinite;
+}
+
+.text-ring {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  position: absolute;
+  text-align: center;
+  line-height: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

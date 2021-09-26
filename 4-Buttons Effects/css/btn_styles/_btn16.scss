@@ -1,0 +1,37 @@
+@import "../properties";
+
+.button16 {
+  border: none;
+  padding: 12px 40px;
+  background-color: orange;
+  font-size: 22px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    @include WidthHeightValues(24px);
+    @include TRBL($topValue: -5px, $leftValue: -5px);
+    content: "";
+    position: absolute;
+    border-top: 2px solid orange;
+    border-left: 2px solid orange;
+    transition: all 0.2s;
+  }
+
+  &::after {
+    @include WidthHeightValues(24px);
+    @include TRBL($bottomValue: -5px, $rightValue: -5px);
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid orange;
+    border-right: 2px solid orange;
+    transition: all 0.2s;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    @include WidthHeightValues(100%);
+  }
+}

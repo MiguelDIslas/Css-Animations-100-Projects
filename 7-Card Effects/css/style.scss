@@ -1,0 +1,50 @@
+@import "./properties";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+* {
+  font-family: "Poppins";
+}
+
+body {
+  @include WidthHeightValues(100%, 100%);
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins";
+  margin-bottom: 20px;
+}
+
+.container {
+  @include WidthHeightValues(100%, 100%);
+  @include FlexWrap();
+}
+
+.element {
+  @include FlexWrap();
+  @include WidthHeightValues(calc(100% / 4.5), auto);
+  justify-content: center;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 35px;
+}
+
+.home-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #282828;
+  color: white;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+@import "./all";

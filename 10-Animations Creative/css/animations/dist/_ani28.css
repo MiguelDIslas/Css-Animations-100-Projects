@@ -1,0 +1,105 @@
+.sectionAnimation28 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  height: 250px;
+}
+
+.container-boxes {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-box {
+  top: 50%;
+  right: "";
+  bottom: "";
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 45px;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+
+.square-box {
+  position: absolute;
+  bottom: -100px;
+  background-color: #f2f2f2;
+  animation: boxes 10s infinite ease-in-out;
+}
+.square-box:nth-child(1) {
+  width: 75px;
+  height: 75px;
+  left: 7%;
+}
+.square-box:nth-child(2) {
+  width: 65px;
+  height: 65px;
+  left: 15%;
+  animation-delay: 4s;
+}
+.square-box:nth-child(3) {
+  width: 82px;
+  height: 82px;
+  left: 45%;
+  animation-delay: 8s;
+}
+.square-box:nth-child(4) {
+  width: 70px;
+  height: 70px;
+  left: 55%;
+  animation-delay: 2s;
+}
+.square-box:nth-child(5) {
+  width: 60px;
+  height: 60px;
+  left: 27%;
+  animation-delay: 6s;
+}
+.square-box:nth-child(6) {
+  width: 55px;
+  height: 55px;
+  left: 60%;
+  animation-delay: 4s;
+}
+.square-box:nth-child(7) {
+  width: 90px;
+  height: 90px;
+  left: 85%;
+  animation-delay: 9s;
+}
+.square-box:nth-child(8) {
+  width: 70px;
+  height: 70px;
+  left: 75%;
+  animation-delay: 4s;
+}
+.square-box:nth-child(9) {
+  width: 45px;
+  height: 45px;
+  left: 10%;
+  animation-delay: 7s;
+}
+.square-box:nth-child(10) {
+  width: 55px;
+  height: 55px;
+  left: 65%;
+  animation-delay: 7s;
+}
+
+@keyframes boxes {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 100%;
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+}

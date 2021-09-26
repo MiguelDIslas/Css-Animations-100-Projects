@@ -1,0 +1,74 @@
+@import "../properties";
+
+.button12 {
+  @include WidthHeightValues(220px, 80px);
+  color: #ff0;
+  background-color: transparent;
+  font-size: 26px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 80px;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    @include WidthHeightValues(20px);
+    content: "";
+    position: absolute;
+    top: 50%;
+    background-color: #ff0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &::before {
+    left: 0;
+    box-shadow: -100px 0 0 #ff0;
+  }
+
+  &::after {
+    right: 0;
+    box-shadow: 100px 0 0 #ff0;
+  }
+
+  &:hover::before {
+    left: 50%;
+    box-shadow: 30px 0 0 #ff0;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+
+  &:hover::after {
+    right: 50%;
+    box-shadow: -30px 0 0 #ff0;
+    transform: translateX(50%) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.span1 {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  position: absolute;
+  background-color: #ff0;
+  border-radius: 8px;
+  transform: scale(0);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.button12:hover .span1 {
+  transform: scale(1);
+  transition-delay: 0.4s;
+}
+
+.button12:hover {
+  color: $DarkColor;
+  transition-delay: 0.4s;
+}

@@ -1,0 +1,51 @@
+@import "../properties";
+
+.sectionAnimation15 {
+  @include FlexCenter();
+  background-color: #262626;
+  height: 200px;
+}
+
+.pulse {
+  @include WidthHeightValues(100px);
+  background-color: #58ea00;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  font-size: 48px;
+  position: relative;
+
+  &::before, &::after {
+    @include TRBL(
+      $topValue: -20px,
+      $rightValue: -20px,
+      $bottomValue: -20px,
+      $leftValue: -20px
+    );
+    content: "";
+    position: absolute;
+    border: 1px solid #58ea00;
+    border-radius: 50%;
+    animation: pulsing 1.5s linear infinite;
+  }
+
+  &::after{
+      animation-delay: 0.5s;
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}

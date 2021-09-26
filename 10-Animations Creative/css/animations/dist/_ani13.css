@@ -1,0 +1,81 @@
+.sectionAnimation13 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+}
+.sectionAnimation13 ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.sectionAnimation13 ul li {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0 20px;
+  border: 2px solid #0a3d62;
+  border-radius: 50%;
+  transition: all 0.5s;
+  position: relative;
+}
+.sectionAnimation13 ul li i {
+  font-size: 48px;
+  color: #0a3d62;
+  transition: all 0.5s;
+}
+.sectionAnimation13 ul li::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #0a3d62;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.sectionAnimation13 ul li:hover::before {
+  opacity: 1;
+  transform: scale(0.8);
+}
+.sectionAnimation13 ul li:hover i {
+  color: white;
+}
+.sectionAnimation13 ul li::after {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.5s;
+  opacity: 0;
+  border: 2px dashed #0a3d62;
+  box-sizing: border-box;
+}
+.sectionAnimation13 ul li:hover::after {
+  opacity: 1;
+  animation: rotating-icon 10s linear infinite;
+}
+
+@keyframes rotating-icon {
+  0% {
+    transform: scale(0.92) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.92) rotate(360deg);
+  }
+}

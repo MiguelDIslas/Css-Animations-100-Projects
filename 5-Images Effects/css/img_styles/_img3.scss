@@ -1,0 +1,33 @@
+@import "../properties";
+
+.image-container3 {
+  @include WidthHeightValues(100%);
+  position: relative;
+  overflow: hidden;
+
+  & > img {
+    @include WidthHeightValues(100%);
+    transition: all 0.5s;
+  }
+}
+
+.caption3 {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  @include FlexColumn();
+  position: absolute;
+  color: white;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+.image-container3:hover {
+  & .caption3 {
+    background: black;
+    transform: translateX(0);
+  }
+
+  & > img {
+    transform: translateX(100%);
+  }
+}

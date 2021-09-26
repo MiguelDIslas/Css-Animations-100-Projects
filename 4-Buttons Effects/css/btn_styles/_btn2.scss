@@ -1,0 +1,25 @@
+@import '../properties';
+
+.button2 {
+  @include ButtonDecoration();
+  transition: all 1s;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: '';
+    position: absolute;
+    background-color:#351435;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+
+  &:hover{
+    color: white;
+  }
+  
+  &:hover::before {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,44 @@
+@import "../properties";
+
+.section3 {
+  font-family: "Poppins";
+}
+
+.menu3 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a:hover {
+    color: white;
+  }
+
+  & li a > span {
+    @include WidthHeightValues(25%, 100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    position: absolute;
+    background-color: #262626;
+    z-index: -1;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: top;
+  }
+
+  & li a:hover span {
+    transform: scaleY(1);
+  }
+
+  & li a span:nth-child(2) {
+    left: 25%;
+    transition-delay: 0.15s;
+  }
+
+  & li a span:nth-child(3) {
+    left: 50%;
+    transition-delay: 0.3s;
+  }
+
+  & li a span:nth-child(4) {
+    left: 75%;
+    transition-delay: 0.45s;
+  }
+}

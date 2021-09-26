@@ -1,0 +1,58 @@
+@import "../properties";
+
+.sectionAnimation20 {
+  @include FlexCenter();
+  background-color: #ee5253;
+  height: 230px;
+}
+
+.loaderSquare {
+  @include WidthHeightValues(150px);
+  position: relative;
+
+  & span {
+    @include WidthHeightValues(50px);
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    animation: chase 2s linear infinite;
+  }
+
+  & span:nth-child(2){
+      animation-delay: 0.7s;
+  }
+
+  & span:nth-child(3){
+      animation-delay: 1.4s;
+  }  
+}
+
+@keyframes chase {
+  0% {
+    @include TRBL($topValue: 0, $leftValue: 0);
+  }
+  12.5% {
+    @include TRBL($topValue: 0, $leftValue: 50%);
+  }
+  25% {
+    @include TRBL($topValue: 0, $leftValue: 50%);
+  }
+  37.5% {
+    @include TRBL($topValue: 50%, $leftValue: 50%);
+  }
+  50% {
+    @include TRBL($topValue: 50%, $leftValue: 50%);
+  }
+  62.5% {
+    @include TRBL($topValue: 50%, $leftValue: 0);
+  }
+  75% {
+    @include TRBL($topValue: 50%, $leftValue: 0);
+  }
+  87.5% {
+    @include TRBL($topValue: 0, $leftValue: 0);
+  }
+  100% {
+    @include TRBL($topValue: 0, $leftValue: 0);
+  }
+}

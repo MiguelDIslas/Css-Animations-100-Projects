@@ -1,0 +1,84 @@
+@import "../properties";
+
+.sectionClip8 {
+  @include FlexCenter();
+  font-family: "Poppins";
+  height: 550px;
+  background-color: rgb(236, 236, 236);
+
+  & ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  & ul li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0px;
+    overflow: hidden;
+  }
+
+  & ul li a {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-size: 60px;
+    font-weight: 900;
+    text-decoration: none;
+    color: transparent;
+  }
+
+  & ul li a:before {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    padding: 5px 0;
+    color: #262626;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+
+  & ul li a:after {
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    padding: 5px 0;
+    color: #262626;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+  }
+
+  & ul li a:hover:before {
+    color: rgb(160, 0, 0);
+    transform: translate(10px, -3px);
+  }
+
+  & ul li a:hover:after {
+    color: rgb(160, 0, 0);
+    transform: translate(-10px, 3px);
+  }
+
+  & ul li:before {
+    @include WidthHeightValues(100%, 1px);
+    @include TRBL($topValue: 50%, $leftValue: -100%);
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    background-color: #262626;
+    transition: 0.5s;
+  }
+
+  & ul li:hover:before {
+    left: 100%;
+  }
+}

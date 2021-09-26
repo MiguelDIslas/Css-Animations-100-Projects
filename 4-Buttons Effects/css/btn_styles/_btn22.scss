@@ -1,0 +1,37 @@
+@import '../properties';
+
+.button22 {
+  text-decoration: none;
+  color: white;
+  font-size: 45px;
+  position: relative;
+  padding: 15px 15px;
+  background-color: $DarkColor;
+  border-radius: 100px;
+
+  &::before{
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    position: absolute;
+    background-color: $DarkColor;
+    border-radius: 100px;
+    content: '';
+    transition: all 0.4s;
+    z-index: -1;
+  }
+
+  &:hover::before{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  &:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+}

@@ -1,0 +1,40 @@
+@import "../properties";
+
+.sectionClip5 {
+  @include FlexCenter();
+  font-family: "Poppins";
+  background-color: #c8d6e5;
+  height: 350px;
+}
+
+.main-clip {
+  position: relative;
+  width: 800px;
+
+  & h1 {
+    @include TRBL($topValue: 50%, $leftValue: 50%);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 120px;
+    text-transform: uppercase;
+  }
+
+  & h1:nth-child(2) {
+    color: white;
+    transition: 0.5s;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+    background-color: #c8d6e5;
+  }
+
+  & h1:nth-child(2):hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  & h1:nth-child(1):hover ~ h1 {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+}

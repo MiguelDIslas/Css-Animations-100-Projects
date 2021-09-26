@@ -1,0 +1,44 @@
+@import "../properties";
+
+.button11 {
+  @include ButtonDecoration();
+  transition: all 0.5s;
+  border-color: #ff0;
+  color: transparent;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    @include FlexCenter();
+    content: "Hover Me";
+    position: absolute;
+    background-color: #363636;
+    transition: all 0.5s;
+    color: #ff0;
+  }
+
+  &:hover::before{
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+  }
+
+  &::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: -100%);
+    @include FlexCenter();
+    content: "Hover Me";
+    position: absolute;
+    background-color: #363636;
+    transition: all 0.5s;
+    transform: scale(0) rotateY(0deg);
+    opacity: 0;
+    color: #ff0;
+  }
+
+  &:hover::after{
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+  }  
+}

@@ -1,0 +1,59 @@
+@import "../properties";
+
+.card1 {
+  position: relative;
+  width: 320px;
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: calc(-100% + 5px);
+    background-color: #ff56ac;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  &:hover::before {
+    bottom: 0;
+  }
+
+  &:hover .content1 {
+    color: white;
+  }
+}
+
+.content1 {
+  position: relative;
+  text-transform: capitalize;
+  color: #777;
+  z-index: 2;
+  transition: 0.5s;
+
+  & h2 {
+    bottom: 10px;
+    margin-top: 0;
+    font-size: 30px;
+  }
+
+  & p {
+    font-size: 18px;
+  }
+
+  & a {
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    color: #777;
+    padding: 6px 10px;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  }
+}

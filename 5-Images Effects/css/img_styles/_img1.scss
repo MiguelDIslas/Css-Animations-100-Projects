@@ -1,0 +1,32 @@
+@import "../properties";
+
+.image-container {
+  @include WidthHeightValues(100%);
+  position: relative;
+  overflow: hidden;
+
+  & > img {
+    @include WidthHeightValues(100%);
+    transition: all 0.5s;
+  }
+}
+
+.caption {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  @include FlexColumn();
+  position: absolute;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.image-container:hover .caption {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.image-container:hover > img {
+  transform: scale(1.3) rotate(15deg);
+}

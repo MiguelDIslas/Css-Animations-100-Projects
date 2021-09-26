@@ -1,0 +1,57 @@
+@import "../properties";
+$RedColor: #ff3838;
+
+.sectionAnimation9 {
+  @include FlexCenter();
+  background-color: #262626;
+  height: 250px;
+}
+
+.heart {
+  @include WidthHeightValues(100px);
+  position: relative;
+  background-color: $RedColor;
+  transform: rotate(45deg);
+  animation: heartbeat 1.4s linear infinite;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: $RedColor;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+
+  &::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: $RedColor;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  25% {
+    transform: rotate(45deg) scale(1);
+  }
+  30% {
+    transform: rotate(45deg) scale(1.4);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  70% {
+    transform: rotate(45deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}

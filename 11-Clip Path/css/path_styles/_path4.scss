@@ -1,0 +1,29 @@
+@import "../properties";
+
+.sectionClip4 {
+  @include FlexCenter();
+  font-family: "Poppins";
+}
+
+.card-pop-up {
+  @include WidthHeightValues(500px, 250px);
+  background-color: #212121;
+  padding: 20px 80px 20px 20px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  clip-path: circle(7% at 93% 20%);
+
+  & h1 {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  & p {
+    font-family: 18px;
+    color: white;
+  }
+
+  &:hover {
+    clip-path: circle(70%);
+  }
+}

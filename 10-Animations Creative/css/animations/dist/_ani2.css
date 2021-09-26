@@ -1,0 +1,29 @@
+.sectionAnimation2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #26de81;
+  perspective: 200px;
+  height: 150px;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 12px;
+  animation: loading-rotate 2s linear infinite;
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+}

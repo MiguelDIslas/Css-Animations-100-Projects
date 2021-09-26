@@ -1,0 +1,25 @@
+@import '../properties';
+
+.button6 {
+  @include ButtonDecoration();
+  transition: all 0.3s;
+  background-color:deepskyblue;
+
+  &:hover{
+    background-color: #F44336;
+    color: white;
+  }
+  
+  &::before {
+    @include WidthHeightValues(100%, 50px);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: '';
+    background-color: white;
+    position: absolute;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all 0.3s;
+  }
+  &:hover::before{
+    transform: translateX(100%) rotate(45deg);
+  }
+}

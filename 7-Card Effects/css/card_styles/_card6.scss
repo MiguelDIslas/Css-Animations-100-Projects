@@ -1,0 +1,79 @@
+@import "../properties";
+
+.card6 {
+  @include WidthHeightValues(320px, 350px);
+  position: relative;
+  width: 320px;
+  height: 350px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  &::before,
+  &::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s;
+    background-color: white;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: rotate(20deg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover::after {
+    transform: rotate(10deg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.imgbox6 {
+  @include TRBL(
+    $topValue: 10px,
+    $leftValue: 10px,
+    $bottomValue: 10px,
+    $rightValue: 10px
+  );
+  position: absolute;
+  background-color: #222;
+  transition: 0.5s;
+  z-index: 2;
+
+  & img{
+      @include WidthHeightValues(100%);
+      @include TRBL($topValue: 0, $leftValue: 0);
+      position: absolute;
+      object-fit: cover;
+  }
+}
+
+.card6:hover .imgbox6 {
+  bottom: 80px;
+}
+
+.details6 {
+  position: absolute;
+  @include TRBL($leftValue: 10px, $bottomValue: 10px, $rightValue: 10px);
+  height: 60px;
+  text-align: center;
+
+  & h2{
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      font-size: 20px;
+      color: #777;
+      text-transform: uppercase;
+  }
+
+  & h2 span{
+      font-weight: 500;
+      font-size: 16px;
+      color: #f38695;
+  }
+}

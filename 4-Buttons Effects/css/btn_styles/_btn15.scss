@@ -1,0 +1,42 @@
+@import '../properties';
+
+.button15 {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 3px;
+  height: 60px;
+  width: 200px;
+  line-height: 60px;
+  text-align: center;
+  color: #FDC518;
+  position: relative;
+
+  &:before {
+    @include WidthHeightValues(100%, 90px);
+    @include TRBL($topValue: -15px, $leftValue: 0);
+    content: '';
+    position: absolute;
+    border-left: 2px solid red;
+    border-right: 2px solid #FDC518;
+    transition: all 0.4s;
+  }
+
+  &:after {
+    @include WidthHeightValues(230px, 100%);
+    @include TRBL($topValue: 0, $leftValue: -15px);
+    content: '';
+    position: absolute;
+    border-top: 2px solid red;
+    border-bottom: 2px solid #FDC518;
+    transition: all 0.4s;
+    transition-delay: 0.4s;
+  }
+
+  &:hover::before{
+    transform: rotateY(180deg);
+  }
+  &:hover::after{
+    transform: rotateX(180deg);
+  }  
+}

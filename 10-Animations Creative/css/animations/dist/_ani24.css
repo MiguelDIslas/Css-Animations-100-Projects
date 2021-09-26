@@ -1,0 +1,62 @@
+.sectionAnimation24 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  height: 230px;
+  justify-content: space-evenly;
+}
+
+.grow-loading {
+  display: flex;
+}
+
+.obj,
+.obj2 {
+  width: 6px;
+  height: 40px;
+  background-color: white;
+  margin: 0 3px;
+  border-radius: 10px;
+  animation: grow-lines 0.8s linear infinite;
+}
+.obj:nth-child(2),
+.obj2:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.obj:nth-child(3),
+.obj2:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.obj:nth-child(4),
+.obj2:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.obj:nth-child(5),
+.obj2:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.obj:nth-child(6),
+.obj2:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.obj:nth-child(7),
+.obj2:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.obj2 {
+  transform-origin: bottom;
+}
+
+@keyframes grow-lines {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}

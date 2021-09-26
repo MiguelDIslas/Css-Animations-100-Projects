@@ -1,0 +1,71 @@
+@import "../properties";
+
+.sectionAnimation29 {
+  @include FlexCenter();
+  background-color: #212121;
+  height: 250px;
+}
+
+.line-hexagon {
+  width: 300px;
+  border-bottom: 4px solid white;
+  position: relative;
+  animation: line-hexagon 2s linear infinite;
+}
+
+.hexagon {
+  @include WidthHeightValues(50px, 30px);
+  @include TRBL($bottomValue: 14px, $leftValue: 0);
+  position: absolute;
+  background-color: white;
+  animation: hexagon 2s linear infinite;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: white;
+    transform: rotate(60deg);
+  }
+
+  &::after {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: white;
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hexagon {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 50px);
+    transform: rotate(720deg);
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes line-hexagon {
+  0% {
+    transform: rotate(30deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}

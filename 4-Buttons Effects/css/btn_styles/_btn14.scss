@@ -1,0 +1,60 @@
+@import "../properties";
+
+.button14 {
+  text-decoration: none;
+  font-size: 45px;
+  border: 3px solid orange;
+  position: relative;
+  padding: 15px 15px;
+  color: orange;
+  transition: all 0.5s;
+  overflow: hidden;
+
+  &::before,
+  &::after,
+   .span2::before,
+   .span2:after {
+    @include WidthHeightValues(25%, 100%);
+    content: '';
+    position: absolute;
+    background-color: orange;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &::before {
+    @include TRBL($topValue: 100%, $leftValue: 0);
+  }
+
+  &:hover::before {
+    @include TRBL($topValue: 0, $leftValue: 0);
+  }
+
+  &::after {
+    @include TRBL($topValue: -100%, $leftValue: 25%);
+  }
+
+  &:hover::after {
+    @include TRBL($topValue: 0, $leftValue: 25%);
+  }
+
+  & .span2::before {
+    @include TRBL($topValue: 100%, $rightValue: 25%);
+  }
+
+  &:hover .span2::before {
+    @include TRBL($topValue: 0, $rightValue: 25%);
+  }
+
+  & .span2::after {
+    @include TRBL($topValue: -100%, $rightValue: 0);
+  }
+
+  &:hover .span2::after {
+    @include TRBL($topValue: 0, $rightValue: 0);
+  }
+
+  &:hover{
+    color: $DarkColor;
+  }
+}

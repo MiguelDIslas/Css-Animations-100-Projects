@@ -1,0 +1,26 @@
+@import '../properties';
+
+.button5 {
+  @include ButtonDecoration();
+  transition: all 1s;
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    @include FlexCenter();
+    content: "Test";
+    color: white;
+    position: absolute;
+    background-color:#351435;
+    transform: translateY(-100%);
+    transition: all 1s;
+  }
+
+  &:hover{
+    color: white;
+  }
+  
+  &:hover::before {
+    transform: translateY(0);
+  }
+}

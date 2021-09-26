@@ -1,0 +1,535 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  margin: 30px;
+  font-family: "Poppins";
+}
+
+section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.home-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #282828;
+  color: white;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+/*Clip Path Example*/
+.sectionClip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionClip img {
+  width: 300px;
+  height: 300px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/*Clip Path 1*/
+.sectionClip1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-clip {
+  width: 300px;
+  height: 60px;
+  border: 7px solid #0a3d62;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.loader-clip span {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.top-half {
+  color: #ee5253;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  animation: split-text 4s linear infinite;
+}
+
+.bottom-half {
+  color: #0a3d62;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  animation: split-text 4s linear infinite reverse;
+}
+
+@keyframes split-text {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  60% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/*Clip Path 2*/
+.sectionClip2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f2f2f;
+}
+
+.wave-clip {
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+.wave-clip h2 {
+  position: absolute;
+  text-align: center;
+  line-height: 500px;
+  font-size: 170px;
+  text-transform: uppercase;
+}
+.wave-clip h2:nth-child(1) {
+  color: #7efff5;
+}
+.wave-clip h2:nth-child(2) {
+  color: #03a9f4;
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0 49%, 16% 56%, 33% 55%, 55% 50%, 75% 42%, 100% 40%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%, 100% 52%, 100% 100%, 0% 100%);
+  }
+}
+/*Clip Path 3*/
+.sectionClip3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #555;
+}
+
+.container-clip-images {
+  width: 800px;
+  height: 500px;
+  position: relative;
+  background-color: #222;
+}
+.container-clip-images:hover .clip {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.container-clip-images .clip:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.clip1 {
+  background: url("../wwwroot/img/image3.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 17% 0, 49% 100%, 0% 100%);
+}
+
+.clip2 {
+  background: url("../wwwroot/img/image4.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(13% 0, 81% 0, 59% 100%, 36% 100%);
+}
+
+.clip3 {
+  background: url("../wwwroot/img/image.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(79% 0, 100% 0, 100% 100%, 59% 100%);
+}
+
+/*Clip Path 4*/
+.sectionClip4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+}
+
+.card-pop-up {
+  width: 500px;
+  height: 250px;
+  background-color: #212121;
+  padding: 20px 80px 20px 20px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  clip-path: circle(7% at 93% 20%);
+}
+.card-pop-up h1 {
+  margin-bottom: 20px;
+  color: white;
+}
+.card-pop-up p {
+  font-family: 18px;
+  color: white;
+}
+.card-pop-up:hover {
+  clip-path: circle(70%);
+}
+
+/*Clip Path 5*/
+.sectionClip5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  background-color: #c8d6e5;
+  height: 350px;
+}
+
+.main-clip {
+  position: relative;
+  width: 800px;
+}
+.main-clip h1 {
+  top: 50%;
+  right: "";
+  bottom: "";
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 120px;
+  text-transform: uppercase;
+}
+.main-clip h1:nth-child(2) {
+  color: white;
+  transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+  background-color: #c8d6e5;
+}
+.main-clip h1:nth-child(2):hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.main-clip h1:nth-child(1):hover ~ h1 {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+/*Clip Path 6*/
+.sectionClip6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 550px;
+}
+
+.card-hover {
+  width: 335px;
+  height: 500px;
+  position: relative;
+}
+.card-hover:hover .image-clip {
+  clip-path: circle(18.2% at 50% 38%);
+}
+.card-hover:hover .content-card-hover h2, .card-hover:hover .content-card-hover p, .card-hover:hover .content-card-hover a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.image-clip {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  transition: all 0.5s;
+  clip-path: circle(70.7% at 50% 50%);
+}
+.image-clip img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-card-hover {
+  top: "";
+  right: "";
+  bottom: 50px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+}
+.content-card-hover h2 {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+.content-card-hover p {
+  margin-bottom: 25px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.content-card-hover a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  text-transform: capitalize;
+}
+.content-card-hover h2,
+.content-card-hover p,
+.content-card-hover a {
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(20px);
+}
+
+/*Clip Path 7*/
+.sectionClip7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 450px;
+}
+
+.card-hover-two {
+  width: 430px;
+  height: 430px;
+  position: relative;
+  background-color: black;
+}
+.card-hover-two img {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.card-hover-two img:hover {
+  clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.content-card-two {
+  top: 50%;
+  right: "";
+  bottom: "";
+  left: 50%;
+  width: 60%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+.content-card-two h2,
+.content-card-two p,
+.content-card-two a {
+  text-transform: capitalize;
+}
+.content-card-two h2 {
+  margin-bottom: 20px;
+}
+.content-card-two p {
+  margin-bottom: 30px;
+}
+.content-card-two a {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+.content-card-two a:hover {
+  color: black;
+  background-color: white;
+}
+
+/*Clip Path 8*/
+.sectionClip8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 550px;
+  background-color: #ececec;
+}
+.sectionClip8 ul {
+  margin: 0;
+  padding: 0;
+}
+.sectionClip8 ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0px;
+  overflow: hidden;
+}
+.sectionClip8 ul li a {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-size: 60px;
+  font-weight: 900;
+  text-decoration: none;
+  color: transparent;
+}
+.sectionClip8 ul li a:before {
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  padding: 5px 0;
+  color: #262626;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+.sectionClip8 ul li a:after {
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  padding: 5px 0;
+  color: #262626;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+.sectionClip8 ul li a:hover:before {
+  color: #a00000;
+  transform: translate(10px, -3px);
+}
+.sectionClip8 ul li a:hover:after {
+  color: #a00000;
+  transform: translate(-10px, 3px);
+}
+.sectionClip8 ul li:before {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  right: "";
+  bottom: "";
+  left: -100%;
+  content: "";
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: #262626;
+  transition: 0.5s;
+}
+.sectionClip8 ul li:hover:before {
+  left: 100%;
+}
+
+/*Clip Path 9*/
+.sectionClip9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 200px;
+  background: #222;
+}
+.sectionClip9 a {
+  width: 180px;
+  height: 60px;
+  position: relative;
+}
+.sectionClip9 a span {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  color: white;
+  background-color: #4834d4;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 22px;
+}
+.sectionClip9 span:nth-child(2) {
+  background-color: white;
+  color: #4834d4;
+  transition: 0.5s;
+  clip-path: polygon(61% 0, 100% 0%, 100% 100%, 60% 100%, 40% 52%);
+}
+.sectionClip9 span:nth-child(2):hover {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 53%);
+}
+.sectionClip9 span:nth-child(1):hover ~ span {
+  clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%, 100% 50%);
+}

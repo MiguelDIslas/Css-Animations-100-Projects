@@ -1,0 +1,46 @@
+$DarkColor: #282828;
+
+@mixin WidthHeightValues($wValue, $hValue: "") {
+  @if ($hValue == "") {
+    width: $wValue;
+    height: $wValue;
+  } @else {
+    width: $wValue;
+    height: $hValue;
+  }
+}
+
+@mixin FlexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin FlexColumn {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin TRBL($topValue: "", $rightValue: "", $bottomValue: "", $leftValue: "") {
+  top: $topValue;
+  right: $rightValue;
+  bottom: $bottomValue;
+  left: $leftValue;
+}
+
+@mixin ReadMoreStyle {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+}

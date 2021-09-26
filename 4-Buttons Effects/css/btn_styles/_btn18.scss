@@ -1,0 +1,65 @@
+@import "../properties";
+
+.button18 {
+  text-decoration: none;
+  color: $DarkColor;
+  font-size: 45px;
+  position: relative;
+  padding: 15px 15px;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before {
+    @include WidthHeightValues(100%, 3px);
+    @include TRBL($topValue: 0, $leftValue: -100%);
+    content: "";
+    position: absolute;
+    background-color: $DarkColor;
+    transition: all 0.5s;
+  }
+
+  &:hover::before {
+    left: 0;
+  }
+
+  &::after {
+    @include WidthHeightValues(100%, 3px);
+    @include TRBL($bottomValue: 0, $rightValue: -100%);
+    content: "";
+    position: absolute;
+    background-color: $DarkColor;
+    transition: all 0.5s;
+  }
+
+  &:hover::after {
+    right: 0;
+  }
+
+  .span4::before {
+    @include WidthHeightValues(3px, 100%);
+    @include TRBL($bottomValue: 100%, $rightValue: 0);
+    content: "";
+    position: absolute;
+    background-color: $DarkColor;
+    transition: all 0.5s;
+  }
+
+  &:hover .span4::before {
+    bottom: 0;
+  }
+  
+  .span4::after {
+    @include WidthHeightValues(3px, 100%);
+    @include TRBL($topValue: 100%, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: $DarkColor;
+    transition: all 0.5s;
+  }
+
+  &:hover .span4::after {
+    top: 0;
+  }
+}

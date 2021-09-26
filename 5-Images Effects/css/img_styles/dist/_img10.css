@@ -1,0 +1,76 @@
+.image-container10 {
+  width: 100%;
+  height: 100%;
+  background-color: #444;
+  position: relative;
+  overflow: hidden;
+}
+.image-container10 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.image-container10::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #006266;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.image-container10:hover::before {
+  opacity: 1;
+}
+
+.caption10 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+}
+.caption10 h1 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.caption10 p {
+  width: 70%;
+}
+.caption10 a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transform: translateY(calc(100% + 350px));
+  transition: all 0.3s;
+}
+.caption10 h1, .caption10 p {
+  transform: scale(10);
+  opacity: 0;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
+}
+
+.image-container10:hover h1, .image-container10:hover p {
+  transform: scale(1);
+  opacity: 1;
+}
+.image-container10:hover a {
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}

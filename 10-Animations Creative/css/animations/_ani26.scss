@@ -1,0 +1,50 @@
+@import "../properties";
+
+.sectionAnimation26 {
+  @include FlexCenter();
+  background-color: #0a3d62;
+  height: 230px;
+}
+
+.outloader {
+  @include WidthHeightValues(90px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  & span {
+    @include WidthHeightValues(30px);
+    position: relative;
+  }
+
+  & span::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: white;
+    animation: out-loading 1s linear infinite;
+  }
+}
+
+@keyframes out-loading {
+  0% {
+    @include WidthHeightValues(100%);
+  }
+  100% {
+    @include WidthHeightValues(0);
+  }
+}
+
+.s4::before,
+.s5::before,
+.s6::before {
+  animation-delay: 0.1s;
+}
+
+.s7::before,
+.s8::before,
+.s9::before {
+  animation-delay: 0.2s;
+}

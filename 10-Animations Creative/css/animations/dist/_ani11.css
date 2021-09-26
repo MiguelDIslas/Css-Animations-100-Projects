@@ -1,0 +1,49 @@
+.sectionAnimation11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #262626;
+  height: 250px;
+}
+.sectionAnimation11 ul {
+  margin: 0;
+  padding-top: 120px;
+  display: flex;
+  border-bottom: 10px solid white;
+}
+.sectionAnimation11 ul li {
+  width: 30px;
+  height: 30px;
+  list-style: none;
+  background-color: white;
+  margin: 0 10px;
+  border-radius: 50%;
+  animation: boucing 0.8s linear infinite;
+}
+.sectionAnimation11 ul li:nth-child(1) {
+  animation-delay: 0.45s;
+}
+.sectionAnimation11 ul li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.sectionAnimation11 ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.sectionAnimation11 ul li:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.sectionAnimation11 ul li:nth-child(5) {
+  animation-delay: 0s;
+}
+
+@keyframes boucing {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

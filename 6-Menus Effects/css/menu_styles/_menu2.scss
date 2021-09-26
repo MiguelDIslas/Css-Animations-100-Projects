@@ -1,0 +1,46 @@
+@import "../properties";
+$PinkColor: #e91e63;
+
+.section2 {
+  font-family: "Poppins";
+}
+
+.menu2 {
+  @include FlexWrap();
+  @include ListandLinkStyle();
+
+  & li a:hover {
+    background-color: $PinkColor;
+    color: white;
+  }
+
+  & li a::before,
+  & li a::after {
+    @include WidthHeightValues(12px);
+    content: "";
+    position: absolute;
+    border: 3px solid $PinkColor;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  & li a::before {
+    @include TRBL($bottomValue: 12px, $leftValue: 12px);
+    border-width: 0 0 3px 3px;
+  }
+
+  & li a::after {
+    @include TRBL($topValue: 12px, $rightValue: 12px);
+    border-width: 3px 3px 0 0;
+  }
+
+  & li a:hover::before {
+    @include TRBL($bottomValue: -8px, $leftValue: -8px);
+    opacity: 1;
+  }
+
+  & li a:hover::after {
+    @include TRBL($topValue: -8px, $rightValue: -8px);
+    opacity: 1;
+  }
+}

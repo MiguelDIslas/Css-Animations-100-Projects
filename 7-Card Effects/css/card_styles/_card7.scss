@@ -1,0 +1,72 @@
+@import "../properties";
+
+.card7 {
+  @include WidthHeightValues(300px, 400px);
+  position: relative;
+  background-color: black;
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.5);
+}
+
+.content7 {
+  @include WidthHeightValues(80%, 80px);
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  left: 10%;
+  text-align: center;
+  transition: 0.5s;
+  overflow: hidden;
+
+  & h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 25px;
+  }
+
+  & p {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 18px;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  & a {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.5s;
+    opacity: 0;
+  }
+}
+
+.card7:hover .content7 {
+  @include WidthHeightValues(100%);
+  left: 0%;
+}
+
+.card7:hover .content7 p,
+.card7:hover .content7 a {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.imgbox7 {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  position: absolute;
+  transition: 0.5s;
+
+  & img {
+    @include WidthHeightValues(100%);
+    object-fit: cover;
+    transition: 0.5s;
+  }
+}
+
+.card7:hover .imgbox7 img{
+    opacity: 0;
+}

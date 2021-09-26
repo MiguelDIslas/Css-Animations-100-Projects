@@ -1,0 +1,22 @@
+@import "../properties";
+
+.sectionAnimation5 {
+  @include FlexCenter();
+  height: 250px;
+}
+
+.bannerImage {
+  @include WidthHeightValues(100%);
+  background-image: url("../../wwwroot/img/bgmulti.png");
+  background-position: 0 0;
+  animation: animated-pattern 15s linear infinite;
+}
+
+@keyframes animated-pattern {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 600px;
+  }
+}

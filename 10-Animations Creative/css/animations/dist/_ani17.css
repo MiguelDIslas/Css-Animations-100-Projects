@@ -1,0 +1,30 @@
+.sectionAnimation17 {
+  animation: change-color 10s infinite;
+}
+.sectionAnimation17 h1 {
+  font-size: 70px;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+}
+
+@keyframes change-color {
+  0% {
+    background-color: skyblue;
+  }
+  20% {
+    background-color: aquamarine;
+  }
+  40% {
+    background-color: tomato;
+  }
+  60% {
+    background-color: plum;
+  }
+  80% {
+    background-color: darkcyan;
+  }
+  100% {
+    background-color: skyblue;
+  }
+}

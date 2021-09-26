@@ -1,0 +1,41 @@
+.sectionClip9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 200px;
+  background: #222;
+}
+.sectionClip9 a {
+  width: 180px;
+  height: 60px;
+  position: relative;
+}
+.sectionClip9 a span {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  position: absolute;
+  color: white;
+  background-color: #4834d4;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 22px;
+}
+.sectionClip9 span:nth-child(2) {
+  background-color: white;
+  color: #4834d4;
+  transition: 0.5s;
+  clip-path: polygon(61% 0, 100% 0%, 100% 100%, 60% 100%, 40% 52%);
+}
+.sectionClip9 span:nth-child(2):hover {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 53%);
+}
+.sectionClip9 span:nth-child(1):hover ~ span {
+  clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%, 100% 50%);
+}

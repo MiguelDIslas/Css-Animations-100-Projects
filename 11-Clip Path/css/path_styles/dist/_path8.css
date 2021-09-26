@@ -1,0 +1,85 @@
+.sectionClip8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  height: 550px;
+  background-color: #ececec;
+}
+.sectionClip8 ul {
+  margin: 0;
+  padding: 0;
+}
+.sectionClip8 ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0px;
+  overflow: hidden;
+}
+.sectionClip8 ul li a {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-size: 60px;
+  font-weight: 900;
+  text-decoration: none;
+  color: transparent;
+}
+.sectionClip8 ul li a:before {
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  padding: 5px 0;
+  color: #262626;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+.sectionClip8 ul li a:after {
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  padding: 5px 0;
+  color: #262626;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+.sectionClip8 ul li a:hover:before {
+  color: #a00000;
+  transform: translate(10px, -3px);
+}
+.sectionClip8 ul li a:hover:after {
+  color: #a00000;
+  transform: translate(-10px, 3px);
+}
+.sectionClip8 ul li:before {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  right: "";
+  bottom: "";
+  left: -100%;
+  content: "";
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: #262626;
+  transition: 0.5s;
+}
+.sectionClip8 ul li:hover:before {
+  left: 100%;
+}

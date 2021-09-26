@@ -1,0 +1,681 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+* {
+  font-family: "Poppins";
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.element {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(100% / 4.5);
+  height: auto;
+  justify-content: center;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 35px;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  text-align: justify;
+  margin: 10px;
+}
+
+.home-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #282828;
+  color: white;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+/*Image 1*/
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.caption {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.image-container:hover .caption {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.image-container:hover > img {
+  transform: scale(1.3) rotate(15deg);
+}
+
+/*Image 2*/
+.image-container2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container2 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.caption2 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+.image-container2:hover .caption2 {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+}
+
+.image-container2:hover > img {
+  transform: scale(1.3) rotate(-15deg);
+}
+
+/*Image 3*/
+.image-container3 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container3 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.caption3 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+.image-container3:hover .caption3 {
+  background: black;
+  transform: translateX(0);
+}
+.image-container3:hover > img {
+  transform: translateX(100%);
+}
+
+/*Image 4*/
+.image-container4 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container4 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s;
+}
+
+.caption4 {
+  width: 100%;
+  height: 30%;
+  top: "";
+  right: "";
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: black;
+  position: absolute;
+  color: white;
+  transition: all 0.2s;
+  transform: translateY(100%);
+}
+
+.image-container4:hover .caption4 {
+  transform: translateY(0);
+}
+.image-container4:hover > img {
+  transform: translateY(-30%);
+}
+
+/*Image 5*/
+.image-container5 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container5 > img {
+  width: 100%;
+  height: 100%;
+}
+.image-container5::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #006266;
+  opacity: 0.5;
+  transform: translateY(100%);
+  transition: all 0.25s;
+  transition-delay: 0.25s;
+}
+.image-container5:hover::before {
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.caption5 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.25s;
+}
+
+.image-container5:hover .caption5 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1px;
+}
+
+/*Image 6*/
+.image-container6 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container6 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.image1:hover {
+  transform: scale(1.2) rotate(9deg);
+}
+
+/*Image 7*/
+.image-container7 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container7 > img {
+  width: 100%;
+  height: 100%;
+}
+.image-container7::before {
+  width: 200%;
+  height: 200%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #2d3436;
+  opacity: 0.8;
+  transition: all 0.25s;
+  transform: translate(500px, 300px) rotate(45deg);
+}
+.image-container7:hover::before {
+  transform: translate(-250px, -200px) rotate(45deg);
+  transition-delay: 0s;
+}
+
+.caption7 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+}
+.caption7 h1 {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translate(250px, -250px);
+  transition: all 0.25s;
+}
+.caption7 p {
+  width: 70%;
+  transform: translate(-250px, calc(100% + 300px));
+  transition: all 0.25s;
+}
+.caption7 a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: all 0.25s;
+  transform: translateY(calc(100% + 250px));
+}
+
+.image-container7:hover h1, .image-container7:hover p {
+  transform: translate(0, 0);
+}
+.image-container7:hover a {
+  transform: translateY(0);
+}
+.image-container7:hover .caption7 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*Image 8*/
+.image-container8 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-container8 > img {
+  width: 100%;
+  height: 100%;
+}
+.image-container8::before {
+  width: 200%;
+  height: 200%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #2d3436;
+  opacity: 0.8;
+  transition: all 0.25s;
+  transform: translate(650px, -100px) rotate(180deg);
+}
+.image-container8:hover::before {
+  transform: translate(0, 0) rotate(0deg);
+  transition-delay: 0s;
+}
+
+.caption8 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+}
+.caption8 h1 {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(calc(100% - 300px));
+  transition: all 0.2s;
+}
+.caption8 p {
+  width: 70%;
+  transform: translateX(300px) rotate(90deg);
+  transition: all 0.2s;
+}
+.caption8 a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+  transform: translateY(calc(100% - 450px));
+}
+
+.image-container8:hover p {
+  transform: translateX(0) rotate(0deg);
+  transition-delay: 0.4s;
+}
+.image-container8:hover h1 {
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+.image-container8:hover a {
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+.image-container8:hover .caption8 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*Image 9*/
+.image-container9 {
+  width: 100%;
+  height: 100%;
+  background-color: #444;
+  border: 10px solid black;
+  position: relative;
+  overflow: hidden;
+}
+.image-container9 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.image-container9::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #006266;
+  transition: all 0.5s;
+  transform: scale(0) rotate(-180deg);
+}
+.image-container9:hover::before {
+  transform: scale(1) rotate(0deg);
+  transition-delay: 0.5s;
+}
+
+.caption9 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+}
+.caption9 h1 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.caption9 p {
+  width: 70%;
+}
+.caption9 a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.caption9 h1, .caption9 p, .caption9 a {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.image-container9:hover h1, .image-container9:hover a, .image-container9:hover p {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
+.image-container9:hover img {
+  transform: scale(0);
+}
+
+/*Image 10*/
+.image-container10 {
+  width: 100%;
+  height: 100%;
+  background-color: #444;
+  position: relative;
+  overflow: hidden;
+}
+.image-container10 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.image-container10::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #006266;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.image-container10:hover::before {
+  opacity: 1;
+}
+
+.caption10 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+}
+.caption10 h1 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.caption10 p {
+  width: 70%;
+}
+.caption10 a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transform: translateY(calc(100% + 350px));
+  transition: all 0.3s;
+}
+.caption10 h1, .caption10 p {
+  transform: scale(10);
+  opacity: 0;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
+}
+
+.image-container10:hover h1, .image-container10:hover p {
+  transform: scale(1);
+  opacity: 1;
+}
+.image-container10:hover a {
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+/*Image 11*/
+.image-container11 {
+  width: 100%;
+  height: 100%;
+  background-color: #444;
+  position: relative;
+  border: 10px solid black;
+  overflow: hidden;
+}
+.image-container11 > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.image-container11::before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  content: "";
+  position: absolute;
+  background-color: #006266;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.image-container11:hover::before {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.caption11 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+}
+.caption11 h1 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.caption11 p {
+  width: 70%;
+}
+.caption11 a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.caption11 h1, .caption11 p, .caption11 a {
+  transform: translateY(calc(100% - 450px));
+  transition: all 0.2s;
+}
+
+.image-container11:hover h1, .image-container11:hover p, .image-container11:hover a {
+  transform: translateY(0);
+}
+.image-container11:hover a {
+  transition-delay: 0.5s;
+}
+.image-container11:hover p {
+  transition-delay: 0.7s;
+}
+.image-container11:hover h1 {
+  transition-delay: 0.9s;
+}
+.image-container11:hover img {
+  transform: rotate(720deg) scale(0);
+  opacity: 0;
+}

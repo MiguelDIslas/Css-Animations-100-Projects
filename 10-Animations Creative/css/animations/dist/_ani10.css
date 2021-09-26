@@ -1,0 +1,24 @@
+.sectionAnimation10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #273c75;
+}
+.sectionAnimation10 h1 {
+  font-size: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: url("../../wwwroot/img/abt.jpg");
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-background 20s linear infinite;
+}
+
+@keyframes text-background {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}

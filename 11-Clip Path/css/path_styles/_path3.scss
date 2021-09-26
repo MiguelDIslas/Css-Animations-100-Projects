@@ -1,0 +1,48 @@
+@import "../properties";
+
+.sectionClip3 {
+  @include FlexCenter();
+  background-color: #555;
+}
+
+.container-clip-images {
+  @include WidthHeightValues(800px, 500px);
+  position: relative;
+  background-color: #222;
+
+  &:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+
+  & .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.clip {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.clip1 {
+  background: url("../../wwwroot/img/image3.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 17% 0, 49% 100%, 0% 100%);
+}
+
+.clip2 {
+  background: url("../../wwwroot/img/image4.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(13% 0, 81% 0, 59% 100%, 36% 100%);
+}
+
+.clip3 {
+  background: url("../../wwwroot/img/image.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(79% 0, 100% 0, 100% 100%, 59% 100%);
+}

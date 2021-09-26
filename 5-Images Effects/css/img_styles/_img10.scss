@@ -1,0 +1,72 @@
+@import "../properties";
+
+.image-container10 {
+  @include WidthHeightValues(100%);
+  background-color: #444;
+  position: relative;
+  overflow: hidden;
+
+  & > img {
+    @include WidthHeightValues(100%);
+    transition: all 0.5s;
+  }
+
+  &::before {
+    @include WidthHeightValues(100%);
+    @include TRBL($topValue: 0, $leftValue: 0);
+    content: "";
+    position: absolute;
+    background-color: #006266;    
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.caption10 {
+  @include WidthHeightValues(100%);
+  @include TRBL($topValue: 0, $leftValue: 0);
+  @include FlexColumn();
+  position: absolute;
+  color: white;
+  transform: translateY(-20px);
+  transition: all 0.25s;
+
+  & h1 {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  & p {
+    width: 70%;
+  }
+
+  & a {
+    @include ReadMoreStyle();
+    transform: translateY(calc(100% + 350px));
+    transition: all 0.3s;
+  }
+
+  & h1,
+  & p {
+    transform: scale(10);
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.2s;
+  }
+}
+
+.image-container10:hover {
+  & h1,
+  & p {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  & a{
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+}
